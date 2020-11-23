@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kingdoms-gate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kingdoms-gate
+  template:
+    metadata:
+      labels:
+        app: kingdoms-gate
+    spec:
+      containers:
+        - image: thisIsCamelCasingRule/kingdomsgate
+          name: kingdoms-gate
+          ports:
+            - containerPort: 8080
+              name: kingdoms-gate

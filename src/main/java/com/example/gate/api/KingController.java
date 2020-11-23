@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class KingController {
 
-    private final String url = "http://localhost:8081/king";
+    private final String url = "http://king-service.herokuapp.com/king";
 
     @PostMapping(params = {"name", "kingdom"})
     public King addNewKing(@RequestParam String name, @RequestParam String kingdom){
@@ -33,7 +33,7 @@ public class KingController {
     public List<King> getAllKing() {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<List<King>> result =
-                restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<>() {
+                restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<King>>() {
                 });
         return result.getBody();
     }

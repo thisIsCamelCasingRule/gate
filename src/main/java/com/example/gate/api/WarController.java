@@ -13,7 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping(path = "/war")
 public class WarController {
 
-    private final String url = "http://localhost:8086/war";
+    private final String url = "http://demo-serv.herokuapp.com/war";
 
     @GetMapping
     public Boolean war(@RequestParam String kingdom1, @RequestParam String kingdom2)

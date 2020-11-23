@@ -15,7 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping(path = "/rebeal")
 public class RebealController {
 
-    private final String url = "http://localhost:8084/rebeal";
+    private final String url = "http://demo-serv.herokuapp.com/rebeal";
 
     @GetMapping
     public Boolean rebeal(@RequestParam String oldKing, @RequestParam String newKing)

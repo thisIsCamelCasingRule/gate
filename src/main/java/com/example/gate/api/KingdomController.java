@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 public class KingdomController {
 
-    private final String url = "http://localhost:8082/kingdom";
+    private final String url = "http://kingdom-service.herokuapp.com/kingdom";
 
     @PostMapping
     public Kingdom addNewKingdom(@RequestParam String name,
@@ -40,7 +40,7 @@ public class KingdomController {
     {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<List<Kingdom>> result =
-                restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<>() {
+                restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Kingdom>>() {
                 });
         return result.getBody();
     }

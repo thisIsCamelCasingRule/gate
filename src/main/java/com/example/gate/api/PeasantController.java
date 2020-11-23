@@ -18,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 public class PeasantController {
 
-    private final String url = "http://localhost:8083/peasant";
+    private final String url = "http://peasant-service.herokuapp.com/peasant";
 
     @PostMapping
     public Peasant addNewPeasant(@RequestParam String name,
@@ -42,7 +42,7 @@ public class PeasantController {
     {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<List<Peasant>> result =
-                restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<>() {
+                restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Peasant>>() {
                 });
         return result.getBody();
     }

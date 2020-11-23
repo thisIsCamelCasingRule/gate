@@ -13,7 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping(path = "/sentence")
 public class SentenceController {
 
-    private final String url = "http://localhost:8085/sentence";
+    private final String url = "http://demo-serv.herokuapp.com/sentence";
 
     @GetMapping(params = {"peasant", "kingdom"})
     public Boolean executePeasant(@RequestParam String peasant, @RequestParam String kingdom)
